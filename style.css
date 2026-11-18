@@ -54,3 +54,25 @@ html{scroll-behavior:smooth}
 #laboratorio{scroll-margin-top:18px}
 @media(max-width:700px){.hero{grid-template-columns:1fr;gap:18px;padding:18px 0 40px}.hero-art{max-width:520px;width:100%}.step-grid{grid-template-columns:1fr}.site-header{align-items:flex-start}.site-header nav{gap:10px}.site-header nav a{font-size:.8rem}.grid{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Guía interactiva para estudiantes */
+.learn-guide{padding:30px 0 46px;border-top:1px solid var(--line)}
+.learn-guide h2{font-size:clamp(1.7rem,3.6vw,2.5rem);letter-spacing:-.03em;margin:8px 0 12px}
+.learn-guide>p:not(.eyebrow){color:#b7ada5;line-height:1.65}
+.guide-examples{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:22px 0}
+.guide-example{display:flex;flex-direction:column;align-items:flex-start;gap:10px;text-align:left;min-height:152px;padding:16px;background:#1a1513;border:1px solid #40342f;border-radius:14px;transition:border-color .15s,transform .15s}
+.guide-example:hover,.guide-example:focus-visible,.guide-example.selected{border-color:#ff9477}
+.guide-example:hover{transform:translateY(-2px)}
+.guide-example strong{font-size:1rem;color:#ffac95}
+.guide-example code{font-size:.78rem;color:#8cddc8;overflow-wrap:anywhere}
+.guide-example span{font-size:.82rem;line-height:1.4;color:#b7ada5}
+.guide-question{padding:14px 18px;background:#182420;border-left:3px solid #7fd1b9;border-radius:0 12px 12px 0}
+.guide-question code,.guide-how code{color:#9de4d0}
+.guide-how{margin-top:24px;padding:22px;border:1px solid #3b322e;border-radius:16px;background:#161311}
+.guide-how h3{margin:0 0 12px;font-size:1.18rem}
+.guide-how p{color:#b7ada5;line-height:1.65}
+.guide-how p:last-child{margin-bottom:0}
+.guide-clarity{font-size:.85rem}
+#aprende{scroll-margin-top:16px}
+@media(max-width:800px){.guide-examples{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:460px){.guide-examples{grid-template-columns:1fr}.guide-example{min-height:0}}
