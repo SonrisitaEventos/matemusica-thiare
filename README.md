@@ -3,6 +3,10 @@
 
 **Proyecto educativo interactivo de Funciones y Geometría**
 
+## ❤️ Nuestra visión
+
+Matemúsica nació como un desafío académico, pero queremos que su aprendizaje trascienda una calificación. Aspiramos a que sea una herramienta educativa gratuita e interactiva para que nuevos estudiantes puedan observar, experimentar y escuchar las matemáticas.
+
 ## ¿Qué es Matemúsica?
 
 Matemúsica es una aplicación web interactiva que permite explorar funciones matemáticas a través de su representación gráfica y su transformación en sonido.
