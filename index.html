@@ -7,7 +7,21 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>matemúsica</h1>
+<header class="site-header"><a class="brand" href="#inicio" aria-label="Matemúsica, ir al inicio">♪ matemúsica</a><nav aria-label="Navegación principal"><a href="#como-funciona">Cómo funciona</a><a href="#laboratorio">Laboratorio</a></nav></header>
+<main id="inicio">
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero-copy"><p class="eyebrow">MATEMÁTICAS + MÚSICA + CREATIVIDAD</p><h1 id="hero-title">Las matemáticas también se pueden <em>escuchar.</em></h1>
+  <p>Descubre cómo una función se convierte en una gráfica y cómo sus valores pueden transformarse en notas musicales. Explora, experimenta y aprende a tu ritmo.</p>
+  <div class="hero-actions"><a class="cta" href="#laboratorio">♫ Comenzar a explorar</a><a class="secondary-link" href="#como-funciona">¿Cómo funciona?</a></div>
+  <p class="hero-note">Gratis · Sin registro · Desde tu navegador</p></div>
+  <div class="hero-art" aria-hidden="true"><div class="art-label">UNA FUNCIÓN, INFINITAS POSIBILIDADES</div><svg viewBox="0 0 440 250" role="img"><defs><linearGradient id="wave-grad" x1="0" x2="1"><stop stop-color="#ff7a59"/><stop offset="1" stop-color="#7fd1b9"/></linearGradient></defs><path d="M20 125H420M220 15V235" stroke="#66564e" stroke-width="1" stroke-dasharray="4 7"/><path d="M20 125 C50 125 60 40 95 40 S145 210 180 210 S230 40 265 40 S315 210 350 210 S400 125 420 125" fill="none" stroke="url(#wave-grad)" stroke-width="5" stroke-linecap="round"/><circle cx="265" cy="40" r="7" fill="#7fd1b9"/></svg><div class="art-equation">y = 0.5 · sin(x)</div></div>
+</section>
+<section id="como-funciona" class="intro-steps" aria-labelledby="steps-title"><p class="eyebrow">TU PRIMERA EXPERIENCIA</p><h2 id="steps-title">Aprender puede sonar diferente</h2><div class="step-grid">
+<article class="step"><span class="step-number">01</span><h3>Elige una función</h3><p>Comienza con uno de los ejemplos o escribe una expresión matemática.</p></article>
+<article class="step"><span class="step-number">02</span><h3>Observa su gráfica</h3><p>Descubre cómo cambian sus valores mientras recorres el eje horizontal.</p></article>
+<article class="step"><span class="step-number">03</span><h3>Escucha y compara</h3><p>Presiona Reproducir y escucha cómo los valores controlan las notas.</p></article></div></section>
+<section id="laboratorio" class="lab-intro" aria-labelledby="lab-title"><p class="eyebrow">LABORATORIO INTERACTIVO</p><h2 id="lab-title">Ahora te toca experimentar</h2><p>Prueba el ejemplo «Seno suave», escucha el resultado y luego cambia la expresión. ¿Qué sucede cuando modificas la amplitud?</p><p class="lab-tip"><strong>Para comenzar:</strong> elige «Seno suave» entre los ejemplos y presiona ▶ Reproducir. El eje horizontal representa el recorrido temporal y el valor vertical determina la altura de las notas.</p></section>
+
 <canvas id="cv"></canvas>
 <div class="bar">
   <button id="play" class="main">▶ Reproducir</button>
@@ -44,6 +58,8 @@
   </div>
 </details>
 
+</main>
+<footer class="site-footer">Hecho para explorar, crear y aprender · Proyecto académico de Thiare</footer>
 <script src="script.js"></script>
 </body>
 </html>
