@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="site-header"><a class="brand" href="#inicio" aria-label="Matemúsica, ir al inicio">♪ matemúsica</a><nav aria-label="Navegación principal"><a href="#como-funciona">Cómo funciona</a><a href="#laboratorio">Laboratorio</a></nav></header>
+<header class="site-header"><a class="brand" href="#inicio" aria-label="Matemúsica, ir al inicio">♪ matemúsica</a><nav aria-label="Navegación principal"><a href="#como-funciona">Cómo funciona</a><a href="#aprende">Aprende</a><a href="#laboratorio">Laboratorio</a></nav></header>
 <main id="inicio">
 <section class="hero" aria-labelledby="hero-title">
   <div class="hero-copy"><p class="eyebrow">MATEMÁTICAS + MÚSICA + CREATIVIDAD</p><h1 id="hero-title">Las matemáticas también se pueden <em>escuchar.</em></h1>
@@ -20,6 +20,18 @@
 <article class="step"><span class="step-number">01</span><h3>Elige una función</h3><p>Comienza con uno de los ejemplos o escribe una expresión matemática.</p></article>
 <article class="step"><span class="step-number">02</span><h3>Observa su gráfica</h3><p>Descubre cómo cambian sus valores mientras recorres el eje horizontal.</p></article>
 <article class="step"><span class="step-number">03</span><h3>Escucha y compara</h3><p>Presiona Reproducir y escucha cómo los valores controlan las notas.</p></article></div></section>
+<section id="aprende" class="learn-guide" aria-labelledby="learn-title">
+<p class="eyebrow">APRENDE JUGANDO</p><h2 id="learn-title">Tu primera función musical</h2>
+<p>No necesitas conocer trigonometría para comenzar. Elige una forma, escucha qué sucede y luego cambia un número. ¡Descubre cómo cambia la música!</p>
+<div class="guide-examples" role="group" aria-label="Funciones para experimentar">
+<button type="button" class="guide-example" data-formula="x/8" data-ymin="-1.5" data-ymax="1.5"><strong>↗ Recta</strong><code>y = x/8</code><span>El tono sube poco a poco.</span></button>
+<button type="button" class="guide-example" data-formula="x^2/16" data-ymin="-1.5" data-ymax="4.5"><strong>⌒ Curva</strong><code>y = x^2/16</code><span>El tono sube cada vez más rápido.</span></button>
+<button type="button" class="guide-example" data-formula="0.5*sin(2*x)" data-ymin="-1.5" data-ymax="1.5"><strong>∿ Onda suave</strong><code>y = 0.5*sin(2*x)</code><span>El tono sube y baja.</span></button>
+<button type="button" class="guide-example" data-formula="0.5*sin(4*x)" data-ymin="-1.5" data-ymax="1.5"><strong>〰 Onda rápida</strong><code>y = 0.5*sin(4*x)</code><span>El tono cambia más veces.</span></button>
+</div>
+<p class="guide-question"><strong>🎧 Tu desafío:</strong> prueba las dos ondas. ¿Qué cambia cuando reemplazas el <code>2</code> por un <code>4</code>? ¿Qué pasa si cambias el <code>0.5</code> por <code>1</code>?</p>
+<div class="guide-how"><h3>¿Cómo escribir una función?</h3><p>Usa <code>x</code> para representar el valor horizontal, <code>*</code> para multiplicar, <code>^</code> para elevar a una potencia y <code>sin(x)</code> para una onda seno. Por ejemplo, <code>2*x</code> significa «dos por x» y <code>x^2</code> significa «x al cuadrado».</p><p><strong>Cómo probarla:</strong> selecciona un ejemplo de arriba, que se cargará automáticamente en el laboratorio, o escribe tu propia fórmula en el campo de función y presiona <strong>▶ Reproducir</strong>.</p><p class="guide-clarity">En Matemúsica la curva no es una grabación del sonido: sus valores controlan la altura de las notas. Por eso puedes escuchar cómo cambia una función.</p></div>
+</section>
 <section id="laboratorio" class="lab-intro" aria-labelledby="lab-title"><p class="eyebrow">LABORATORIO INTERACTIVO</p><h2 id="lab-title">Ahora te toca experimentar</h2><p>Prueba el ejemplo «Seno suave», escucha el resultado y luego cambia la expresión. ¿Qué sucede cuando modificas la amplitud?</p><p class="lab-tip"><strong>Para comenzar:</strong> elige «Seno suave» entre los ejemplos y presiona ▶ Reproducir. El eje horizontal representa el recorrido temporal y el valor vertical determina la altura de las notas.</p></section>
 
 <canvas id="cv"></canvas>
@@ -61,5 +73,23 @@
 </main>
 <footer class="site-footer">Hecho para explorar, crear y aprender · Proyecto académico de Thiare</footer>
 <script src="script.js"></script>
+<script>
+document.querySelectorAll('.guide-example').forEach(button => {
+  button.addEventListener('click', () => {
+    document.querySelector('#rew').click();
+    document.querySelector('#x0').value = '0';
+    document.querySelector('#x1').value = '8';
+    document.querySelector('#y0').value = button.dataset.ymin;
+    document.querySelector('#y1').value = button.dataset.ymax;
+    const input = document.querySelector('#list .fn input');
+    if (!input) return;
+    input.value = button.dataset.formula;
+    input.dispatchEvent(new Event('input', {bubbles:true}));
+    document.querySelectorAll('.guide-example').forEach(b => b.classList.toggle('selected', b === button));
+    document.querySelector('#laboratorio').scrollIntoView({behavior:'smooth'});
+    input.focus({preventScroll:true});
+  });
+});
+</script>
 </body>
 </html>
